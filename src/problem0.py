@@ -22,9 +22,8 @@ def main():
     run_test_problem0b()
     run_test_problem0c()
 
-
 ########################################################################
-# TODO: 2.  READ the green doc-string for the:
+# Done: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -176,6 +175,15 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
+    a = sum_of_digits(n)
+    p = is_prime(a)
+    if p == False:
+        return False
+    else:
+        return True
+
+
+
 
 
 def run_test_problem0b():
