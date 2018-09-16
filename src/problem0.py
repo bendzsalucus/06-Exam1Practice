@@ -158,7 +158,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DOne: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -176,12 +176,11 @@ def problem0a(n):
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
     a = sum_of_digits(n)
-    p = is_prime(a)
-    if p == False:
+    p = a // 2
+    if (a % p) == 0 :
         return False
     else:
         return True
-
 
 
 
@@ -237,8 +236,22 @@ def problem0b(n):
       -- If n is 200, the correct answer is 46,
            since there are 46 primes between 2 and 200.
      """
+    a = 0
+    z = 0
+    for k in range(n):
+        p = (n-k)
+        z = is_prime(p)
+        if z == True:
+            a = a + 1
+        else:
+            a = a + 0
+    return (a-1)
+
+
+
+
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -305,6 +318,18 @@ def problem0c(circle, n, window):
       :type n: int
       :type window: rg.RoseWindow
     """
+
+    #window69 = window
+    #circle69 = circle
+    #n69 = n
+
+    for k in range(n):
+        radius = circle.radius
+        circle(0, (0 + radius))
+
+
+
+
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #          Tests have been written for you (above).
