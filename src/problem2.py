@@ -103,7 +103,9 @@ def problem2a(circle, rectangle, window):
     """
     window69 = window
     rectangle1 = rg.Rectangle(rectangle)
-    rectangle1.
+    window.continue_on_mouse_click
+    line1 = rg.Line
+    line1.
     circle1 = rg.Circle(circle)
     point1 = rg.Rectangle.corner_1
     point2 = rg.Rectangle.corner_2
@@ -118,6 +120,9 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+
+
+
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
@@ -180,6 +185,9 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
+
+
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
