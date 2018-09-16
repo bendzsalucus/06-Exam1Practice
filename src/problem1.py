@@ -163,11 +163,17 @@ def problem1a(m, n):
          which is about 1.135.
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
-
+    import math
+    u = 0
+    for k in range(n-m+1):
+        u = k + n
+        p = math.sin(u)
+        f = p + p
+    return f
 
 
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -180,7 +186,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DOne: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -197,6 +203,27 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    expected = 3
+    actual = problem1b(2, 8)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    expected = 2
+    actual = problem1b(4, 10)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', actual)
+
+    expected = 5
+    actual = problem1b(3, 14)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', actual)
+
+    expected = 6
+    actual = problem1b(3, 18)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', actual)
+
 
 
 def problem1b(m, f):
@@ -215,6 +242,15 @@ def problem1b(m, f):
       -- If m is 5 and f is 40, the correct answer is 44,
            since there are 44 primes between 5 and 200.
      """
+    u = 0
+    for k in range(f-m):
+        a = (m + k)
+        o = is_prime(a)
+        if o == True:
+            y = u +1
+    return y
+
+
     # ------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -309,6 +345,18 @@ def problem1c(n):
            and the product of those numbers is 223092870,
            and the sum of the digits in 223092870 is 33.
     """
+    u = 1
+    for k in range(n):
+        a = n - k
+        i = is_prime(a)
+        if i == False:
+            u = u*1
+        else:
+            u = a * u
+    q = sum_of_digits(u)
+    return q
+
+
     # ------------------------------------------------------------------
     # TODO: 7. Implement and test this function.
     #          Tests have been written for you (above).
