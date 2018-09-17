@@ -163,13 +163,17 @@ def problem1a(m, n):
          which is about 1.135.
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
+
+    #8012
+    #p&P
+    #video on debugging
     import math
-    u = 0
-    for k in range(n-m+1):
-        u = k + n
-        p = math.sin(u)
-        f = p + p
-    return f
+    total = 0
+    for k in range(n**2 - m**2 + 1):
+        a = m**2 + k
+        p = math.sin(a)
+        total = total + p
+    return total
 
 
     # ------------------------------------------------------------------
@@ -204,23 +208,23 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
-    expected = 3
+    expected = 6
     actual = problem1b(2, 8)
     print('Test 1 expected:', expected)
     print('       actual:  ', actual)
 
-    expected = 2
-    actual = problem1b(4, 10)
+    expected = 5
+    actual = problem1b(3, 5)
     print('Test 2 expected:', expected)
     print('       actual:  ', actual)
 
-    expected = 5
-    actual = problem1b(3, 14)
+    expected = 1
+    actual = problem1b(2, 1)
     print('Test 3 expected:', expected)
     print('       actual:  ', actual)
 
-    expected = 6
-    actual = problem1b(3, 18)
+    expected = 44
+    actual = problem1b(5, 40)
     print('Test 4 expected:', expected)
     print('       actual:  ', actual)
 
@@ -243,12 +247,12 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     u = 0
-    for k in range(f-m):
+    for k in range(f*m-1):
         a = (m + k)
         o = is_prime(a)
         if o == True:
-            y = u +1
-    return y
+            u = u +1
+    return u
 
 
     # ------------------------------------------------------------------
@@ -358,7 +362,7 @@ def problem1c(n):
 
 
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DOne: 7. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################

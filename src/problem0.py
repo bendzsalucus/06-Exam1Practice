@@ -237,15 +237,12 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     a = 0
-    z = 0
-    for k in range(n):
+    for k in range(n-1):
         p = (n-k)
         z = is_prime(p)
         if z == True:
             a = a + 1
-        else:
-            a = a + 0
-    return (a-1)
+    return (a)
 
 
 
@@ -319,19 +316,23 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
 
-    #window69 = window
-    #circle69 = circle
-    #n69 = n
-
+    radius = circle.radius
     for k in range(n):
-        radius = circle.radius
-        circle(0, (0 + radius))
+
+
+        n12 = n*k
+        centerpoint = rg.Point(0, (radius*k*2))
+        circle2 = rg.Circle(centerpoint, radius)
+        circle2.attach_to(window)
+        window.render(0.5)
+
+
 
 
 
 
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DOne: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
