@@ -3,9 +3,10 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
          Amanda Stouder, their colleagues and Lucus Bendzsa.
-"""  #Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+
 
 ########################################################################
 # Students:
@@ -101,18 +102,25 @@ def problem2a(circle, rectangle, window):
       :type rectangle: rg.Rectangle
       :type window:    rg.RoseWindow
     """
-    window69 = window
-    rectangle1 = rg.Rectangle(rectangle)
-    window.continue_on_mouse_click
-    line1 = rg.Line
-    line1.
-    circle1 = rg.Circle(circle)
-    point1 = rg.Rectangle.corner_1
-    point2 = rg.Rectangle.corner_2
-    line = rg.Line(point1, point2)
+    center = circle.center
+    radius = circle.radius
+    circle2 = rg.Circle(center, radius)
+    c1 = rectangle.corner_1
+    c2 = rectangle.corner_2
+    rectangle2 = rg.Rectangle(c1, c2)
+    circle2.attach_to(window)
+    rectangle2.outline_color = rectangle.outline_color
+    rectangle2.attach_to(window)
+    line2 = rg.Line(c1, c2)
+    line2.arrow = 'first'
+    line2.attach_to(window)
+    window.continue_on_mouse_click()
+    fillcolor = rectangle.outline_color
+    circle2.fill_color = fillcolor
+    window.render()
 
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DOne: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -120,8 +128,6 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
-
-
 
 
 def run_test_problem2b():
@@ -185,11 +191,59 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
+    p1 = rect.corner_1
+    p2 = rect.corner_2
+
+    if p1.x > p2.x and p1.y > p2.y:
+        for k in range(n):
+            x1 = p1.x + delta*k
+            x2 = p2.x + delta*k * -1
+            y1 = p1.y + delta*k
+            y2 = p2.y + delta*k * -1
+            point1 = rg.Point(x1, y1)
+            point2 = rg.Point(x2, y2)
+            rectangle2 = rg.Rectangle(point1, point2)
+            rectangle2.attach_to(win)
+
+    if p1.x > p2.x and p2.y > p1.y:
+        for k in range(n):
+            x1 = p1.x + delta*k
+            x2 = p2.x + delta*k * -1
+            y1 = p1.y + delta*k * -1
+            y2 = p2.y + delta*k
+            point1 = rg.Point(x1, y1)
+            point2 = rg.Point(x2, y2)
+            rectangle2 = rg.Rectangle(point1, point2)
+            rectangle2.attach_to(win)
+
+    if p1.x < p2.x and p2.y < p1.y:
+        for k in range(n):
+            x1 = p1.x + delta*k * -1
+            x2 = p2.x + delta*k
+            y1 = p1.y + delta*k
+            y2 = p2.y + delta*k * -1
+            point1 = rg.Point(x1, y1)
+            point2 = rg.Point(x2, y2)
+            rectangle2 = rg.Rectangle(point1, point2)
+            rectangle2.attach_to(win)
+
+    if p1.x < p2.x and p1.y < p2.y:
+        for k in range(n):
+            x1 = p1.x + delta*k * -1
+            x2 = p2.x + delta*k
+            y1 = p1.y + delta*k * -1
+            y2 = p2.y + delta*k
+            point1 = rg.Point(x1, y1)
+            point2 = rg.Point(x2, y2)
+            rectangle2 = rg.Rectangle(point1, point2)
+            rectangle2.attach_to(win)
+
+    win.render()
 
 
 
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DOne: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------

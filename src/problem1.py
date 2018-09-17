@@ -256,7 +256,7 @@ def problem1b(m, f):
 
 
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DOne: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ####################################################################
