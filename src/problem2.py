@@ -240,8 +240,7 @@ def problem2b(rect, n, delta, win):
 
     win.render()
 
-
-
+#
     # ------------------------------------------------------------------
     # DOne: 3. Implement and test this function.
     #          Tests have been written for you (above).
@@ -251,7 +250,7 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
-
+#a
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
